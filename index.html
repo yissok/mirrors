@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Mirrors</title>
+    </head>
+    <script>
+
+        let w=window.innerWidth/2
+        let p00Posx=0
+        let p00Posy=0
+
+        let p00deltax=0
+        let p00deltay=0
+
+        let p01deltax=w
+        let p01deltay=0
+
+        let p10deltax=0
+        let p10deltay=w
+
+        let p11deltax=w
+        let p11deltay=w
+
+
+        var p00 = function( sketch ) {
+            sketch.setup = function() {
+                let canvas = sketch.createCanvas(w, w, sketch.WEBGL)
+                canvas.background(200, 0, 0)
+                canvas.position(p00Posx,p00Posy)
+            }
+            sketch.draw = function() {
+                sketch.stroke(255,255,255)
+                if (sketch.mouseIsPressed === true) {
+                    let mX =  sketch.mouseX-w/2
+                    let pmX = sketch.pmouseX-w/2
+                    let mY =  sketch.mouseY-w/2
+                    let pmY = sketch.pmouseY-w/2
+                    sketch.line(mX, mY, pmX, pmY)
+                    sketch.line(-mX, mY, -pmX, pmY)
+                    sketch.line(mX, -mY, pmX, -pmY)
+                    sketch.line(-mX, -mY, -pmX, -pmY)
+                    sketch.line(mY, mX, pmY, pmX)
+                    sketch.line(mY, -mX, pmY, -pmX)
+                    sketch.line(-mY, mX, -pmY, pmX)
+                    sketch.line(-mY, -mX, -pmY, -pmX)
+
+                }
+            }
+        }
+        new p5(p00)
+
+        var p01 = function( sketch ) {                                  //CHANGE NAME
+            let dx = p01deltax                                          //CHANGE NAME
+            let dy = p01deltay                                          //CHANGE NAME
+            sketch.setup = function() {
+                let canvas = sketch.createCanvas(w, w, sketch.WEBGL)
+                canvas.background(0, 0, 0)
+                canvas.position(p00Posx+dx,p00Posy+dy)
+            }
+            sketch.draw = function() {
+                sketch.stroke(255,255,255)
+                if (sketch.mouseIsPressed === true) {
+                    let mX =  sketch.mouseX-w/2+dx
+                    let pmX = sketch.pmouseX-w/2+dx
+                    let mY =  sketch.mouseY-w/2+dy
+                    let pmY = sketch.pmouseY-w/2+dy
+                    sketch.line(mX, mY, pmX, pmY)
+                    sketch.line(-mX, mY, -pmX, pmY)
+                    sketch.line(mX, -mY, pmX, -pmY)
+                    sketch.line(-mX, -mY, -pmX, -pmY)
+                    sketch.line(mY, mX, pmY, pmX)
+                    sketch.line(mY, -mX, pmY, -pmX)
+                    sketch.line(-mY, mX, -pmY, pmX)
+                    sketch.line(-mY, -mX, -pmY, -pmX)
+
+                }
+            }
+        }
+        new p5(p01)                                                     //CHANGE NAME
+        
+        
+        var p10 = function( sketch ) {                                  //CHANGE NAME
+            let dx = p10deltax                                          //CHANGE NAME
+            let dy = p10deltay                                          //CHANGE NAME
+            sketch.setup = function() {
+                let canvas = sketch.createCanvas(w, w, sketch.WEBGL)
+                canvas.background(255,255,255)
+                canvas.position(p00Posx+dx,p00Posy+dy)
+            }
+            sketch.draw = function() {
+                sketch.stroke(0,0,0)
+                if (sketch.mouseIsPressed === true) {
+                    let mX =  sketch.mouseX-w/2+dx
+                    let pmX = sketch.pmouseX-w/2+dx
+                    let mY =  sketch.mouseY-w/2+dy
+                    let pmY = sketch.pmouseY-w/2+dy
+                    sketch.line(mX, mY, pmX, pmY)
+                    sketch.line(-mX, mY, -pmX, pmY)
+                    sketch.line(mX, -mY, pmX, -pmY)
+                    sketch.line(-mX, -mY, -pmX, -pmY)
+                    sketch.line(mY, mX, pmY, pmX)
+                    sketch.line(mY, -mX, pmY, -pmX)
+                    sketch.line(-mY, mX, -pmY, pmX)
+                    sketch.line(-mY, -mX, -pmY, -pmX)
+
+                }
+            }
+        }
+        new p5(p10)                                                     //CHANGE NAME
+
+        var p11 = function( sketch ) {                                  //CHANGE NAME
+            let dx = p11deltax                                          //CHANGE NAME
+            let dy = p11deltay                                          //CHANGE NAME
+            sketch.setup = function() {
+                let canvas = sketch.createCanvas(w, w, sketch.WEBGL)
+                canvas.background(200, 200, 200)
+                canvas.position(p00Posx+dx,p00Posy+dy)
+            }
+            sketch.draw = function() {
+                sketch.stroke(155,155,155)
+                if (sketch.mouseIsPressed === true) {
+                    let mX =  sketch.mouseX-w/2+dx
+                    let pmX = sketch.pmouseX-w/2+dx
+                    let mY =  sketch.mouseY-w/2+dy
+                    let pmY = sketch.pmouseY-w/2+dy
+                    sketch.line(mX, mY, pmX, pmY)
+                    sketch.line(-mX, mY, -pmX, pmY)
+                    sketch.line(mX, -mY, pmX, -pmY)
+                    sketch.line(-mX, -mY, -pmX, -pmY)
+                    sketch.line(mY, mX, pmY, pmX)
+                    sketch.line(mY, -mX, pmY, -pmX)
+                    sketch.line(-mY, mX, -pmY, pmX)
+                    sketch.line(-mY, -mX, -pmY, -pmX)
+
+                }
+            }
+        }
+        new p5(p11)                                                     //CHANGE NAME
+
+
+    </script>
+</html>
